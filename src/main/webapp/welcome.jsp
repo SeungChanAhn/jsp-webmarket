@@ -1,6 +1,6 @@
 
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <!DOCTYPE html>
@@ -22,19 +22,19 @@
 			</div>
 		</div>
 	</nav>
-	<%!// º¯¼ö, ¸Þ¼­µå ¼±¾ð
-	String greeting = "Welcome to Web Shopping Mall";
+	<%!// ë³€ìˆ˜, ë©”ì„œë“œ ì„ ì–¸
+	String greeting = "ì›¹ ì‡¼í•‘ëª°ì— ì˜¤ì‹ ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤!";
 	String tagline = "Welcome to Web Market!";%>
 	<%
-	// ±×³É java ÄÚµå
+	// ê·¸ëƒ¥ java ì½”ë“œ
 	// out.println("<h1>Hello World</h1>");
 	%>
-	<!-- p-5 : ÀüÃ¼ÆÐµù 5 (±²ÀåÈ÷ ¸¹ÀÌ) (3: º¸Åë) -->
-	<!-- bg-primary: ±âº»»ö»ó , text-white: ±ÛÀÚ ÇÏ¾é°Ô-->
+	<!-- p-5 : ì „ì²´íŒ¨ë”© 5 (êµ‰ìž¥ížˆ ë§Žì´) (3: ë³´í†µ) -->
+	<!-- bg-primary: ê¸°ë³¸ìƒ‰ìƒ , text-white: ê¸€ìž í•˜ì–—ê²Œ-->
 	<div class="p-5 bg-primary text-white">
-		<!-- container : ÁÂ¿ì °¡¿îµ¥ Á¤·Ä -->
+		<!-- container : ì¢Œìš° ê°€ìš´ë° ì •ë ¬ -->
 		<div class="container">
-			<!-- display-3 : Å« ±ÛÀÚÁß¿¡ º¸Åë Å©±â (1~5) -->
+			<!-- display-3 : í° ê¸€ìžì¤‘ì— ë³´í†µ í¬ê¸° (1~5) -->
 			<h1 class="display-3">
 				<%=greeting%>
 			</h1>
@@ -42,23 +42,16 @@
 	</div>
 
 	<div class="container">
-		<!-- °¡¿îµ¥ Á¤·Ä -->
+		<!-- ê°€ìš´ë° ì •ë ¬ -->
 		<div class="text-center">
 			<h3>
 				<%=tagline%>
 			</h3>
-		</div>
-	</div>
-
-	<div class="container">
-		<div class="text-center">
-			<h3>
-				<%
-				Date today = new Date();
-				SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
-				out.println("ÇöÀç Á¢¼Ó ½Ã°£: " + format.format(today));
-				%>
-			</h3>
+			<%
+			Date today = new Date();
+			SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
+			out.println("í˜„ìž¬ ì ‘ì† ì‹œê°„: " + format.format(today));
+			%>
 		</div>
 	</div>
 
