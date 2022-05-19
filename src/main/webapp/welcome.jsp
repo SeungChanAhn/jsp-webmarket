@@ -5,6 +5,8 @@
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.List"%>
 <%@ page import="dto.Product"%>
+
+<!-- useBean 액션 태그 사용 scope를 session으로 -->
 <jsp:useBean id="repository" class="dao.ProductRepository"
 	scope="session" />
 <!DOCTYPE html>
@@ -12,6 +14,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Welcome</title>
+<!-- 부트스트랩 불러오기 -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -19,6 +22,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+	<!-- include 액션 태그 사용하여 클래스와 연결, 모든 페이지에서 네비게이션이 다 출력되도록 복붙한다. -->
 	<jsp:include page="menu.jsp" />
 	<%!// 변수, 메서드 선언
 	String greeting = "웹 쇼핑몰에 오신것을 환영합니다!";
@@ -46,8 +50,9 @@
 				<%=tagline%>
 			</h3>
 			<%
-			// 1초에 한번씩 새로고침 안좋은 방법
-			response.setIntHeader("Refresh", 5);
+			// 1초에 한번씩 새로고침 안좋은 방법, 전체가 다 새로고침되서 네트워크 힘듬
+			// AJAX 사용해서 시간부부만 바뀌게 해줘야한다.
+			response.setIntHeader("Refresh", 5); // 5초마다 1번씩 새로고침
 			
 			Date today = new Date();
 			SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
@@ -55,7 +60,7 @@
 			%>
 		</div>
 	</div>
-	
+	<!-- include 액션 태그 사용 -->
 	<jsp:include page="footer.jsp" />
 </body>
 </html>
