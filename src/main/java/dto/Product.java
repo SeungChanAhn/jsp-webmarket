@@ -1,9 +1,6 @@
 package dto;
 
-import java.io.Serializable;
-
-public class Product implements Serializable { // Serializable 인터페이스, 인터페이스는 다형성
-	private static final long serialVersionUID = 2867748905925104542L; // 여기저기있는 변수들을 모아서 보낼 때
+public class Product { 
 
 	// model class를 만들때는 private으로 만들고 고민시작, jsp에서 사용할건 무지성으로 private
 	private String productId;
@@ -17,8 +14,6 @@ public class Product implements Serializable { // Serializable 인터페이스, 
 	
 	// 모델 클래스
 	// JSP : 자바빈즈 (getter/setter, 기본 생성자, Serializable)
-	
-	public Product() {}; // 생성자를 추가해서 자동으로 만들어주는 기본생성자가 사라짐 직접입력
 	
 	public Product(String productId, String name, int unitPrice) { 
 		this.productId = productId;
