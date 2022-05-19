@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<jsp:useBean id="repository" class="dao.ProductRepository"
-	scope="session" />
+<jsp:useBean id="repository" class="dao.ProductRepository" scope="session" />
 <%@ page import="java.util.List"%>
 <%@ page import="dto.Product"%>
 
@@ -35,9 +34,10 @@
 			for (Product product : products) { // 반복
 			%>
 			<div class="col-md-4">
-				<h3><%= product.getName() %></h3>
-				<p><%= product.getDescription() %></p>
-				<p><%= product.getUnitPrice() %>원</p>
+				<h3><%=product.getName()%></h3>
+				<p><%=product.getDescription()%></p>
+				<p><%=product.getUnitPrice()%>원
+				</p>
 			</div>
 			<%
 			}
