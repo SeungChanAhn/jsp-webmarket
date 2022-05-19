@@ -27,7 +27,7 @@
 	<%
 	// product.jsp?id=p1234 이런식으로 넘어온 값 얻기
 	String id = request.getParameter("id"); // 무조건 스트링으로 받음
-	Product product = repository.getProductById(id);
+	Product product = repository.getProductById(id); // useBean에서 class id 
 	%>
 	<div class="container">
 		<div class="row">
