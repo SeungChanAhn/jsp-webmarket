@@ -18,13 +18,32 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
+	<div class="p-5 bg-primary text-white">
+		<!-- container : 좌우 가운데 정렬 -->
+		<div class="container">
+			<!-- display-3 : 큰 글자중에 보통 크기 (1~5) -->
+			<h1 class="display-3">상품 목록</h1>
+		</div>
+	</div>
 	<%
 	// ProductRepository  repository = new ProductRepository(); -> 이 코드를 쓰고 새고고침하면 해시코드가 계속 바뀜 new를 계속만나니까.. 액션코드 사용
 	List<Product> products = repository.getAllProducts();
-	for (Product product : products) {
-		out.println(product + "<br><br>");
-	}
 	%>
+	<div class="container">
+		<div class="row text-center">
+			<%
+			for (Product product : products) { // 반복
+			%>
+			<div class="col-md-4">
+				<h3><%= product.getName() %></h3>
+				<p><%= product.getDescription() %></p>
+				<p><%= product.getUnitPrice() %>원</p>
+			</div>
+			<%
+			}
+			%>
+		</div>
+	</div>
 	<jsp:include page="footer.jsp" />
 
 </body>
