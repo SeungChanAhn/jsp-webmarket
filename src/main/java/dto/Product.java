@@ -2,10 +2,10 @@ package dto;
 
 import java.io.Serializable;
 
-public class Product implements Serializable { // Serializable ÀÎÅÍÆäÀÌ½º, ÀÎÅÍÆäÀÌ½º´Â ´ÙÇü¼º
-	private static final long serialVersionUID = 2867748905925104542L; // ¿©±âÀú±âÀÖ´Â º¯¼öµéÀ» ¸ğ¾Æ¼­ º¸³¾ ¶§
+public class Product implements Serializable { // Serializable ì¸í„°í˜ì´ìŠ¤, ì¸í„°í˜ì´ìŠ¤ëŠ” ë‹¤í˜•ì„±
+	private static final long serialVersionUID = 2867748905925104542L; // ì—¬ê¸°ì €ê¸°ìˆëŠ” ë³€ìˆ˜ë“¤ì„ ëª¨ì•„ì„œ ë³´ë‚¼ ë•Œ
 
-	// model class¸¦ ¸¸µé¶§´Â privateÀ¸·Î ¸¸µé°í °í¹Î½ÃÀÛ, jsp¿¡¼­ »ç¿ëÇÒ°Ç ¹«Áö¼ºÀ¸·Î private
+	// model classë¥¼ ë§Œë“¤ë•ŒëŠ” privateìœ¼ë¡œ ë§Œë“¤ê³  ê³ ë¯¼ì‹œì‘, jspì—ì„œ ì‚¬ìš©í• ê±´ ë¬´ì§€ì„±ìœ¼ë¡œ private
 	private String productId;
 	private String name;
 	private int unitPrice;
@@ -15,10 +15,10 @@ public class Product implements Serializable { // Serializable ÀÎÅÍÆäÀÌ½º, ÀÎÅÍÆ
 	private long unitsInStock;
 	private String condition;
 	
-	// ¸ğµ¨ Å¬·¡½º
-	// JSP : ÀÚ¹ÙºóÁî (getter/setter, ±âº» »ı¼ºÀÚ, Serializable)
+	// ëª¨ë¸ í´ë˜ìŠ¤
+	// JSP : ìë°”ë¹ˆì¦ˆ (getter/setter, ê¸°ë³¸ ìƒì„±ì, Serializable)
 	
-	public Product() {}; // »ı¼ºÀÚ¸¦ Ãß°¡ÇØ¼­ ÀÚµ¿À¸·Î ¸¸µé¾îÁÖ´Â ±âº»»ı¼ºÀÚ°¡ »ç¶óÁü Á÷Á¢ÀÔ·Â
+	public Product() {}; // ìƒì„±ìë¥¼ ì¶”ê°€í•´ì„œ ìë™ìœ¼ë¡œ ë§Œë“¤ì–´ì£¼ëŠ” ê¸°ë³¸ìƒì„±ìê°€ ì‚¬ë¼ì§ ì§ì ‘ì…ë ¥
 	
 	public Product(String productId, String name, int unitPrice) { 
 		this.productId = productId;
@@ -77,7 +77,7 @@ public class Product implements Serializable { // Serializable ÀÎÅÍÆäÀÌ½º, ÀÎÅÍÆ
 	}
 
 	@Override
-	public String toString() { // °´Ã¼¸¦ ½ºÆ®¸µ ÇüÅÂ·Î º¸¿©ÁÖ´Â °Í
+	public String toString() { // ê°ì²´ë¥¼ ìŠ¤íŠ¸ë§ í˜•íƒœë¡œ ë³´ì—¬ì£¼ëŠ” ê²ƒ
 		return "Product [productId=" + productId + ", name=" + name + ", unitPrice=" + unitPrice + ", description="
 				+ description + ", manufacturer=" + manufacturer + ", category=" + category + ", unitsInStock="
 				+ unitsInStock + ", condition=" + condition + "]";

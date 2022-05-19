@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import dto.Product;
 
-// Product¿¡ ´ëÇÑ ±â´ÉÀ» Á¤ÀÇ
+// Productì— ëŒ€í•œ ê¸°ëŠ¥ì„ ì •ì˜
 public class ProductRepository {
-	private List<Product> products = new ArrayList<>(); // ¾î¶°ÇÑ ¸®½ºÆ®¶óµµ ¹Ş¾ÆµéÀÏ¼öÀÖµµ·Ï List·Î ¼±¾ğ
+	private List<Product> products = new ArrayList<>(); // ì–´ë– í•œ ë¦¬ìŠ¤íŠ¸ë¼ë„ ë°›ì•„ë“¤ì¼ìˆ˜ìˆë„ë¡ Listë¡œ ì„ ì–¸
 	
-	// ¿ø·¡´Â DB¿¡¼­ °¡Á®¿Ã µ¥ÀÌÅÍ
-	// Áö±İ DB ¾È ¹è¿ö¼­ ±×³É 3°³ ¸¸µç °ÍÀÓ
+	// ì›ë˜ëŠ” DBì—ì„œ ê°€ì ¸ì˜¬ ë°ì´í„°
+	// ì§€ê¸ˆ DB ì•ˆ ë°°ì›Œì„œ ê·¸ëƒ¥ 3ê°œ ë§Œë“  ê²ƒì„
 	public ProductRepository() {
 		Product phone = new Product("P1234", "iphone 6s", 800000);
 		phone.setDescription("4.7-inch, 1334X750 Retina HD display, blablabla");
@@ -18,7 +18,7 @@ public class ProductRepository {
 		phone.setUnitsInStock(1000);
 		phone.setCondition("New");
 		
-		Product notebook = new Product("P1235", "LG PC ±×·¥", 1500000);
+		Product notebook = new Product("P1235", "LG PC ê·¸ë¨", 1500000);
 		notebook.setDescription("4.7-inch, 1334X750 Retina HD display, blablabla");
 		notebook.setCategory("Smart Phone");
 		notebook.setManufacturer("LG");
@@ -37,7 +37,7 @@ public class ProductRepository {
 		products.add(tablet);
 	}
 	
-	// ¸ğµç »óÇ° Á¤º¸¸¦ °¡Á®¿Â´Ù.
+	// ëª¨ë“  ìƒí’ˆ ì •ë³´ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 	public List<Product> getAllProducts() {
 		return products;
 	}
