@@ -46,6 +46,9 @@
 				<%=tagline%>
 			</h3>
 			<%
+			// 1초에 한번씩 새로고침 안좋은 방법
+			response.setIntHeader("Refresh", 5);
+			
 			Date today = new Date();
 			SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
 			out.println("현재 접속 시간: " + format.format(today));
