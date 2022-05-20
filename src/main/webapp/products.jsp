@@ -25,6 +25,8 @@
 		</div>
 	</div>
 	<%
+	out.println(session.getAttribute("name"));
+	out.println(session.getAttribute("food"));
 	// ProductRepository  repository = new ProductRepository(); -> 이 코드를 쓰고 새고고침하면 해시코드가 계속 바뀜 new를 계속만나니까.. 액션코드 사용
 	ProductRepository repository = ProductRepository.getInstance();
 	List<Product> products = repository.getAllProducts();
