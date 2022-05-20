@@ -7,7 +7,14 @@ import dto.Product;
 // Product에 대한 기능을 정의
 public class ProductRepository {
 	private List<Product> products = new ArrayList<>(); // 어떠한 리스트라도 받아들일수있도록 List로 선언
-
+	
+	// 하나의 객체를 생성 후 인스턴스를 재사용하는 싱글턴 패턴
+	private static ProductRepository instance = new ProductRepository();
+	
+	public static ProductRepository getInstance() {
+		return instance;
+	}
+	
 	// 원래는 DB에서 가져올 데이터
 	// 지금 DB 안 배워서 그냥 3개 만든 것임
 	public ProductRepository() {
@@ -50,5 +57,10 @@ public class ProductRepository {
 				.filter((product) -> product.getProductId().equals(productId)) // 걸러낼 규칙 true(필요한것)만 걸러냄
 				.findFirst() // 첫번째 것
 				.get(); // 얻기
+	}
+	
+	
+	public void addProduct(Product product) {
+		products.add(product);
 	}
 }

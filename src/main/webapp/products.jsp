@@ -1,7 +1,6 @@
+<%@page import="dao.ProductRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<jsp:useBean id="repository" class="dao.ProductRepository"
-	scope="session" />
 <%@ page import="java.util.List"%>
 <%@ page import="dto.Product"%>
 
@@ -27,6 +26,7 @@
 	</div>
 	<%
 	// ProductRepository  repository = new ProductRepository(); -> 이 코드를 쓰고 새고고침하면 해시코드가 계속 바뀜 new를 계속만나니까.. 액션코드 사용
+	ProductRepository repository = ProductRepository.getInstance();
 	List<Product> products = repository.getAllProducts();
 	%>
 	<div class="container">
