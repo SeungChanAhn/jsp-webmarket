@@ -1,3 +1,4 @@
+<%@page import="dao.TodoRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/todolist.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/form.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/todoitem.css" />
+<script src="assets/js/common.js"></script>
 <meta charset="UTF-8">
 <title>Todo List</title>
 <script>
@@ -14,6 +16,10 @@
 	}
 
 	function addTodo() {
+		console.log('클릭!!!')
+		// post 방식으로 processAddTodo.jsp?task=어쩌구
+		// fetch post방식 
+		postData('processAddTodo.jsp', {task: 'test'});
 	}
 
 	function remove(id) {
@@ -22,13 +28,17 @@
 </head>
 
 <body>
+	<%
+	TodoRepository repository = TodoRepository.getInstance();
+	out.println(repository.getTodos());
+	%>
 	<div class="todo-list-template">
 		<div class="title">오늘 할 일</div>
 
 		<section class="form-wrapper">
 			<div class="form">
 				<input name="text" id="text" />
-				<div class="create-button">추가</div>
+				<div class="create-button" onclick="addTodo()">추가</div> <!-- import를 했으니까 사용가능 -->
 			</div>
 		</section>
 
