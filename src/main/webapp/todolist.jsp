@@ -46,6 +46,16 @@
 	}
 
 	function remove(id) {
+		$.ajax({
+			url : "processRemoveTodo.jsp",
+			type : "post",
+			data : {
+				"id" : id // 넣어서 보냄
+			},
+			success : function (data) {
+				window.location.reload();
+			}
+		});
 	}
 </script>
 </head>
@@ -53,7 +63,6 @@
 <body>
 	<%
 	TodoRepository repository = TodoRepository.getInstance();
-	out.println(repository.getTodos());
 	List<Todo> todos = repository.getTodos();
 	%>
 	<div class="todo-list-template">
@@ -72,7 +81,7 @@
 			for (Todo todo : todos) {
 			%>
 			<div class="todo-item" onclick="setDone(<%=todo.getId()%>)">
-				<div class="remove">&times;</div>
+				<div class="remove" onclick="remove(<%=todo.getId()%>)">&times;</div>
 				<div class="todo-text <%=todo.isDone() ? "checked" : ""%>"><%=todo.getTask() %></div>
 				<%
 				if (todo.isDone()) {
@@ -85,17 +94,6 @@
 			<%
 			}
 			%>
-
-
-			<div class="todo-item">
-				<div class="remove">&times;</div>
-				<div class="todo-text checked}">숙제</div>
-				<div class="check-mark">&#x2713;</div>
-			</div>
-			<div class="todo-item">
-				<div class="remove">&times;</div>
-				<div class="todo-text}">청소</div>
-			</div>
 		</section>
 	</div>
 </body>

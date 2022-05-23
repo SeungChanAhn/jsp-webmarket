@@ -37,4 +37,15 @@ public class TodoRepository { // 저장소는 새로고침해도 계속 써야�
 			}
 		}
 	}
+	
+	public void remove(long id) {
+		Todo removeTodo = null;
+		for (Todo todo : todos) {
+			if (todo.getId() == id) {
+				removeTodo = todo;
+				break;
+			}
+		}
+		todos.remove(removeTodo);
+	}
 }
