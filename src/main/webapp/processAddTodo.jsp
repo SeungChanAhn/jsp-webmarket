@@ -8,7 +8,6 @@ String task = request.getParameter("task");
 
 Todo todo = new Todo(task);
 
-
 TodoRepository repository = TodoRepository.getInstance();
 repository.addTodo(todo);
 

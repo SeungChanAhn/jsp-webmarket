@@ -8,7 +8,9 @@
 <link rel="stylesheet" type="text/css" href="assets/css/todolist.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/form.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/todoitem.css" />
-<script src="assets/js/common.js"></script>
+<!-- <script src="assets/js/common.js"></script> -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>Todo List</title>
 <script>
@@ -18,8 +20,17 @@
 	function addTodo() {
 		console.log('클릭!!!')
 		// post 방식으로 processAddTodo.jsp?task=어쩌구
-		// fetch post방식 
-		postData('processAddTodo.jsp', {task: 'test'});
+		let task = $("#text").val();
+		$.ajax({
+			url : "processAddTodo.jsp",
+			type : "post",
+			data : {
+				"task" : task // 넣어서 보냄
+			},
+			success : function (data) {
+				window.location.reload();
+			}
+		});
 	}
 
 	function remove(id) {
@@ -38,7 +49,8 @@
 		<section class="form-wrapper">
 			<div class="form">
 				<input name="text" id="text" />
-				<div class="create-button" onclick="addTodo()">추가</div> <!-- import를 했으니까 사용가능 -->
+				<div class="create-button" onclick="addTodo()">추가</div>
+				<!-- import를 했으니까 사용가능 -->
 			</div>
 		</section>
 
