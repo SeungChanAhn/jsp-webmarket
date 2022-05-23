@@ -28,4 +28,13 @@ public class TodoRepository { // 저장소는 새로고침해도 계속 써야�
 		currentId++;
 		todos.add(todo);
 	}
+	
+	public void toggle(long id) {
+		for (Todo todo : todos) {
+			if (todo.getId() == id) {
+				todo.setDone(!todo.isDone());
+				break;
+			}
+		}
+	}
 }
